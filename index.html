@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registeration form</title>
+</head>
+<body>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #name{
+            margin: 10px;
+        }
+        #container{
+            text-align: center;
+            border: 2px solid black;
+            width: fit-content;
+            padding: 10px;
+            margin: 10px;
+            margin-left: 500px;
+            margin-top: 40px;
+           flex-wrap: wrap;
+            z-index: 1;
+            position:relative;
+           
+         
+        }
+        #name{
+            padding: 10px;
+            margin: 10px;
+        }
+        #email{
+            padding: 10px;
+            margin: 10px;
+        }
+        #password{
+            padding: 10px;
+            margin: 10px;
+        }
+        #namebox{
+            margin: 10px;
+            border: none;
+         border-bottom: 1px solid black;
+         
+        }
+        #namebox:focus{
+            outline: none;
+        }
+    
+        #emailbox{
+            margin: 10px;
+            border: none;
+            border-bottom: 1px solid black;
+
+        }
+        #emailbox:focus{
+            outline:none;
+        }
+        #passwordbox{
+            margin: 10px;
+            border: none;
+            border-bottom: 1px solid black;
+            
+
+        }
+        #passwordbox:focus{
+            outline: none;
+        }
+        #span1{
+            display: none;
+            font-size: small;
+        }
+        #span2{
+            display: none;
+            font-size: small;
+        }
+        #span3{
+            display: none;
+            font-size: small;
+        }
+        #sub{padding: 10px;
+            width: 100px;
+            border: 2px solid black;
+            background-color:seagreen;
+            color:azure;
+            font-size: medium;
+        
+        }
+       
+      #hd{
+        color: seagreen;
+      }
+
+    </style>
+    <form>
+        <div id="container">
+             <!-- name -->
+        <div id="name">
+            <h1 id="hd">Registration form</h1>
+            <label id="namelabel">Name</label><br>
+           
+                <input id="namebox" type="text" ><br>
+            <span id="span1" style="color:gray;">Enter your name</span>
+
+            
+
+        </div>
+        <!-- email -->
+        <div id="email">
+            <label id="emaillabel">Email</label><br>
+            <input id="emailbox" type="email" ><br>
+            <span id="span2" style="color:gray;">Enter your email</span>
+        </div>
+        <!-- password -->
+        <div id="password">
+            <label id="passwordlabel">Password</label><br>
+            <input id="passwordbox" type="password" ><br>
+            <span id="span3" style="color:gray;">Enter your password</span>
+        </div>
+       <input id="sub" type="submit">
+
+        </div>
+    </form>
+       
+       <script>
+        // selecting
+        var submitInput=document.getElementById("sub")
+        var spanInput1=document.getElementById("span1")
+        var nameInput=document.getElementById("namebox")
+        var emailInput=document.getElementById("emailbox")
+        var passwordInput=document.getElementById("passwordbox")
+        var spanInput2=document.getElementById("span2")
+        var spanInput3=document.getElementById("span3")
+
+function checkname(){
+
+    if(nameInput.value===""){
+        spanInput1.style.display="block"
+    }
+    else
+   {
+        spanInput1.style.display="none"
+    }
+
+}
+
+// check emaol
+function checkemail(){
+    if(emailInput.value===""){
+    spanInput2.style.display="block"
+}
+else{
+    spanInput2.style.display="none"
+}
+
+}
+// check password
+function checkpassword(){
+    if(passwordInput.value===""){
+        spanInput3.style.display="block"
+    }
+    else{
+        spanInput3.style.display="none"
+    }
+}
+
+
+    
+  
+    nameInput.addEventListener("input",checkname)
+   checkname()
+
+    emailInput.addEventListener("input",checkemail)
+checkemail()
+
+passwordInput.addEventListener("input",checkpassword)
+checkpassword()
+
+
+       </script>
+       
+  
+</body>
+</html>
