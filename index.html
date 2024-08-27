@@ -70,15 +70,15 @@
             outline: none;
         }
         #span1{
-            display: none;
+           
             font-size: small;
         }
         #span2{
-            display: none;
+           
             font-size: small;
         }
         #span3{
-            display: none;
+          
             font-size: small;
         }
         #sub{padding: 10px;
@@ -103,7 +103,7 @@
             <label id="namelabel">Name</label><br>
            
                 <input id="namebox" type="text" ><br>
-            <span id="span1" style="color:gray;">Enter your name</span>
+            <span id="span1" style="color:red;">Enter valid name</span>
 
             
 
@@ -112,13 +112,13 @@
         <div id="email">
             <label id="emaillabel">Email</label><br>
             <input id="emailbox" type="email" ><br>
-            <span id="span2" style="color:gray;">Enter your email</span>
+            <span id="span2" style="color:red;">Enter valid email address</span>
         </div>
         <!-- password -->
         <div id="password">
             <label id="passwordlabel">Password</label><br>
             <input id="passwordbox" type="password" ><br>
-            <span id="span3" style="color:gray;">Enter your password</span>
+            <span id="span3" style="color:red;">Password must be greater than 6 character</span>
         </div>
        <input id="sub" type="submit">
 
@@ -135,50 +135,37 @@
         var spanInput2=document.getElementById("span2")
         var spanInput3=document.getElementById("span3")
 
-function checkname(){
+        submitInput.addEventListener("click",function(){
+            event.preventDefault()
 
-    if(nameInput.value===""){
-        spanInput1.style.display="block"
-    }
-    else
-   {
-        spanInput1.style.display="none"
-    }
+            var nameInputRegExp=/^\[a-zA-z]+$/
+            var emailInputRegExp=/^\[a-zA-z]+@gmail.com/
+            var passwordInputRegExp=/^\[a-zA-z,0-9]+$/
 
-}
+            if(nameInputRegExp.test(nameInput.value==false))
+        {
+            document.getElementById("span1").style.display="inline"
+        }
+        else{
+            document.getElementById("span1").style.display="none"
+        }
 
-// check emaol
-function checkemail(){
-    if(emailInput.value===""){
-    spanInput2.style.display="block"
-}
-else{
-    spanInput2.style.display="none"
-}
+        if(emailInputRegExp.test(emailInput.value==false))
+        {
+            document.getElementById("span2").style.display="inline"
+        }
+        else{
+            document.getElementById("span2").style.display="none"
+        }
 
-}
-// check password
-function checkpassword(){
-    if(passwordInput.value===""){
-        spanInput3.style.display="block"
-    }
-    else{
-        spanInput3.style.display="none"
-    }
-}
-
-
-    
-  
-    nameInput.addEventListener("input",checkname)
-   checkname()
-
-    emailInput.addEventListener("input",checkemail)
-checkemail()
-
-passwordInput.addEventListener("input",checkpassword)
-checkpassword()
-
+        if(passwordInputRegExp.test(passwordInput.value==false))
+        {
+            document.getElementById("span3").style.display="inline"
+        }
+        else{
+            document.getElementById("span3").style.display="none"
+        }
+        })
 
        </script>
        
